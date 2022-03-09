@@ -12,7 +12,7 @@ STAGE = "GET_DATA" ## <<< change stage name
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(
-    filename=os.path.join(ROOT, "logs", 'running_logs.log'), 
+    filename=os.path.join("logs", 'running_logs.log'), 
     level=logging.INFO, 
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
