@@ -9,7 +9,7 @@ STAGE = "MAIN" ## <<< change stage name
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 create_directories(["logs"])
-with open(os.path.join(ROOT, "logs", 'running_logs.log'), "w") as f:
+with open(os.path.join("logs", 'running_logs.log'), "w") as f:
     f.write("")
 
 logging.basicConfig(
