@@ -7,6 +7,7 @@ from src.utils.common import read_yaml, create_directories
 
 STAGE = "MAIN" ## <<< change stage name 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+os.environ["MLFLOW_TMP_DIR"] = ROOT
 
 create_directories(["logs"])
 with open(os.path.join("logs", 'running_logs.log'), "w") as f:
