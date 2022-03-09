@@ -6,9 +6,10 @@ import logging
 from src.utils.common import create_directories
 
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
 
-def validate_image(config: dict) -> None:
+
+
+def validate_image(config: dict, ROOT) -> None:
     PARENT_DIR = os.path.join(ROOT, 
         config["data"]["unzip_data_dir"],
         config["data"]["parent_data_dir"])

@@ -46,7 +46,7 @@ def main(config_path):
     else:
         logging.info(f"data already extracted")
     # validating data
-    validate_image(config)
+    validate_image(config, ROOT)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
