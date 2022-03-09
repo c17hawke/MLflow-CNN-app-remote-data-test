@@ -13,7 +13,7 @@ with open(os.path.join(ROOT, "logs", 'running_logs.log'), "w") as f:
     f.write("")
 
 logging.basicConfig(
-    filename=os.path.join(ROOT, "logs", 'running_logs.log'), 
+    filename=os.path.join("logs", 'running_logs.log'), 
     level=logging.INFO, 
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
