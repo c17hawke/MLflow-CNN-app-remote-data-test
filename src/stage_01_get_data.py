@@ -7,9 +7,10 @@ from src.utils.common import read_yaml, create_directories, unzip_file
 from src.utils.data_mgmt import validate_image
 import random
 import urllib.request as req
+from main import ROOT
 
 STAGE = "GET_DATA" ## <<< change stage name 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+# ROOT = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
