@@ -44,6 +44,7 @@ def main(config_path):
         create_directories([unzip_data_dir])
         unzip_file(source=data_file_path, dest=unzip_data_dir)
     else:
+        unzip_file(source=data_file_path, dest=unzip_data_dir)
         logging.info(f"data already extracted")
     # validating data
     validate_image(config, ROOT)
