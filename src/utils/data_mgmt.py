@@ -6,16 +6,16 @@ import logging
 from src.utils.common import create_directories
 
 def validate_image(config: dict) -> None:
-    PARENT_DIR = os.path.abspath(os.path.join(
+    PARENT_DIR = os.path.join(
         config["data"]["unzip_data_dir"],
-        config["data"]["parent_data_dir"]))
-    BAD_DATA_DIR = os.path.abspath(os.path.join(
+        config["data"]["parent_data_dir"])
+    BAD_DATA_DIR =os.path.join(
         config["data"]["unzip_data_dir"],
-        config["data"]["bad_data_dir"]))
-    create_directories([BAD_DATA_DIR])
+        config["data"]["bad_data_dir"])
+    create_directories([os.path.abspath(BAD_DATA_DIR)])
 
-    for dirs in os.listdir(PARENT_DIR):
-        full_path_data_dir = os.path.join(PARENT_DIR, dirs)
+    for dirs in os.listdir(os.path.abspath(PARENT_DIR)):
+        full_path_data_dir = os.path.join(os.path.abspath(PARENT_DIR), dirs)
         for imgs in os.listdir(full_path_data_dir):
             path_to_img = os.path.join(full_path_data_dir, imgs)
             try:
