@@ -9,6 +9,7 @@ import random
 import tensorflow as tf
 
 STAGE = "BASE MODEL CREATION" ## <<< change stage name 
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 

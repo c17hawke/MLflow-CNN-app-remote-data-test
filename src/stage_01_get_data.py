@@ -9,9 +9,10 @@ import random
 import urllib.request as req
 
 STAGE = "GET_DATA" ## <<< change stage name 
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(
-    filename=os.path.join("logs", 'running_logs.log'), 
+    filename=os.path.join(ROOT, "logs", 'running_logs.log'), 
     level=logging.INFO, 
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
@@ -22,11 +23,11 @@ def main(config_path):
     ## read config files
     config = read_yaml(config_path)
     URL = config["data"]["source_url"]
-    local_dir = config["data"]["local_dir"]
+    local_dir = os.path.join(ROOT, config["data"]["local_dir"])
     create_directories([local_dir])
 
     data_file = config["data"]["data_file"]
-    data_file_path = os.path.join(local_dir, data_file)
+    data_file_path = os.path.join(ROOT, local_dir, data_file)
 
     
     if not os.path.isfile(data_file_path):
@@ -37,7 +38,7 @@ def main(config_path):
         logging.info(f"filename:{data_file} already present")
 
     # Unzip ops
-    unzip_data_dir = config["data"]["unzip_data_dir"]
+    unzip_data_dir = os.path.join(ROOT, config["data"]["unzip_data_dir"])
     if not os.path.exists(unzip_data_dir):
         create_directories([unzip_data_dir])
         unzip_file(source=data_file_path, dest=unzip_data_dir)
