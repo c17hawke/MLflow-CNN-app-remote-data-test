@@ -18,7 +18,7 @@ def validate_image(config: dict) -> None:
     create_directories([os.path.abspath(BAD_DATA_DIR)])
 
     for dirs in os.listdir(PARENT_DIR):
-        full_path_data_dir = os.path.join(ROOT, PARENT_DIR, dirs)
+        full_path_data_dir = os.path.join(os.path.dirname(PARENT_DIR), dirs)
         for imgs in os.listdir(full_path_data_dir):
             path_to_img = os.path.join(ROOT, full_path_data_dir, imgs)
             try:
